@@ -3,3 +3,11 @@
 
 # Example code in package build process
 *-Ex.R
+
+# editor temporary
+*~
+
+# archives
+*.zip
+*.7z
+*.tar
