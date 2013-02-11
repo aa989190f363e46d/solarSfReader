@@ -73,7 +73,7 @@ traverse <- function(spCat = sp.root.dir){
     prData[['persId']]  <- probeID
     prData[['probeId']] <- prId
 
-    DATA[[prId]]       <- calculate(prData)
+    DATA[[prId]]       <- if(is.na(prData)) NA else calculate(prData)
     
   }
   
