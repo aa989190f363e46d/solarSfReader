@@ -7,7 +7,7 @@ sp.root.dir <- c('.','spectres')
 ## for example, match with "01012001_15_c5_550.fss"
 ## also can be used for extracting parts from filename
 ## using regmatches function
-fl.name.regex <- "([[:digit:]]{8})_([[:digit:]]{1,3}[[:alpha:]]{3,4})_c([[:digit:]]{1,2})_([[:digit:]]{3}).fss"
+fl.name.regex <- "([[:digit:]]{8})_([[:digit:]]{1,3})_c([[:digit:]]{1,2})_([[:digit:]]{3}).fss"
 
 ## source('./readSpc.r')
 
