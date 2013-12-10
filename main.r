@@ -6,3 +6,5 @@ source('./storages.r')
 source('./calculations.r')
 source('./readSpc.r')
 source('./manipulator.r')
+
+Sys.setlocale('LC_ALL','C')

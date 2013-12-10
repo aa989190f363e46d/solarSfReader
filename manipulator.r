@@ -1,13 +1,14 @@
 curr.sep <- .Platform[['file.sep']]
 
 ## '.' denote that path is relative
-sp.root.dir <- c('.','spectres')
+#sp.root.dir <- c('.','spectres')
+sp.root.dir <- c('.','LPC','LPHD')
 
 ## regex for spectres filenames pattern
 ## for example, match with "01012001_15_c5_550.fss"
 ## also can be used for extracting parts from filename
 ## using regmatches function
-fl.name.regex <- "([[:digit:]]{8})_([[:digit:]]{1,3}[[:alpha:]]{3,4})_c([[:digit:]]{1,2})_([[:digit:]]{3}).fss"
+fl.name.regex <- "([[:digit:]]{8})_([[:digit:]]{1,3}[[:alpha:]]{3,5})_c([[:digit:]]{1,2})_([[:digit:]]{3}).fss"
 
 ## source('./readSpc.r')
 
@@ -15,7 +16,9 @@ fl.name.regex <- "([[:digit:]]{8})_([[:digit:]]{1,3}[[:alpha:]]{3,4})_c([[:digit
 ## placed in single directory and specialy named
 ## to be matched by regex above
 getProbeData <- function(probeID = NA,spCat = sp.root.dir){
-  probeData = list()
+
+probeData = list()
+
   if (!is.na(probeID)){
     for (msmnt.fl in dir(paste(paste(spCat
                                      ,collapse=curr.sep)
@@ -24,7 +27,7 @@ getProbeData <- function(probeID = NA,spCat = sp.root.dir){
                          ,pattern=fl.name.regex,
                          ,full.names=T)){
       
-      r <- regexec(fl.name.regex,msmnt.fl)
+            r <- regexec(fl.name.regex,msmnt.fl)
       ## 2: date
       ## 3: probeID
       ## 4: pyrene concentration
@@ -68,6 +71,11 @@ traverse <- function(spCat = sp.root.dir){
     
     prData             <- getProbeData(probeID
                                       ,spCat)
+
+    if (length(prData) == 0){
+      next
+    }
+
     prId               <- getProbeIdHash(prData)
     
     prData[['persId']]  <- probeID

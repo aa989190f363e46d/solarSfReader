@@ -18,7 +18,10 @@ calculate <- function(data){
                    ,function(x) return(0))
   names(result) <- names
 
-  concSeq <- c(1,2,4,6,8,10)
+  result$'persId' <- data$'persId'
+
+  #concSeq <- c(1,2,4,6,8,10)
+  concSeq <- c(1,2,4)
   result$'concSeq' <- concSeq
 
   waveLen <- c(286,337)
