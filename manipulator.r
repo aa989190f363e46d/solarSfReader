@@ -8,7 +8,11 @@ sp.root.dir <- c('.','LPC','LPHD')
 ## for example, match with "01012001_15_c5_550.fss"
 ## also can be used for extracting parts from filename
 ## using regmatches function
+<<<<<<< HEAD
 fl.name.regex <- "([[:digit:]]{8})_([[:digit:]]{1,3}[[:alpha:]]{3,5})_c([[:digit:]]{1,2})_([[:digit:]]{3}).fss"
+=======
+fl.name.regex <- "([[:digit:]]{8})_([[:digit:]]{1,3})_c([[:digit:]]{1,2})_([[:digit:]]{3}).fss"
+>>>>>>> 1de5e63bd029abf8bc0543e159028e377762a3fc
 
 ## source('./readSpc.r')
 
